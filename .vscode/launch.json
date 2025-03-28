@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "de.hso.cardgame.gamecentral.server.Server",
+            "projectName": "Hearts"
+        }
+    ]
+}

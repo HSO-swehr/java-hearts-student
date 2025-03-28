@@ -1,0 +1,78 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'eclipse' // Add Eclipse plugin for better IDE integration
+    id 'idea' // Add IDEA plugin for better IDE integration
+}
+
+group = 'de.hso.cardgame'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.github.andrewoma.dexx:collection:0.7'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+    testImplementation 'net.jqwik:jqwik:1.7.3'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
+}
+
+
+application {
+    mainClass = 'de.hso.cardgame.gamecentral.server.Server'
+}
+
+task runLocalGame(type: JavaExec) {
+    group = "application"
+    description = "Run full game locally"
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    main = 'de.hso.cardgame.clients.FullGame'
+}
+
+task runNetworkClient(type: JavaExec) {
+    group = "application"
+    description = "Runs network client"
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    main = 'de.hso.cardgame.clients.NetClient'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs = ['resources']
+        }
+        java {
+            srcDirs = ['src']
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+    }
+}
+
+// Create Gradle wrapper for better project portability
+wrapper {
+    gradleVersion = '8.8'
+}
+
+javadoc {
+    options {
+        addStringOption('Xdoclint:none', '-quiet')
+        encoding = 'UTF-8'
+        links("https://docs.oracle.com/en/java/javase/11/docs/api/")
+    }
+}
