@@ -39,8 +39,10 @@ Model and clients communicate via **events** and **commands**.
 
 You need the following software installed on your computer:
 
-* Visual Studio Code with the [extension pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack) and the [extension for gradle](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-gradle)
+* Eclipse with the extension "Buildship Gradle Integration" (can be found via "Help" -> "Eclipse Market Place")
 * JDK, at least version 21
+
+Import the project in Eclipse with "File" -> "Import" -> "Gradle" -> "Existing Gradle Project" and then choose the java-hearts-student directory. This might take a moment.
 
 ## Useful commands
 
@@ -55,7 +57,7 @@ is necessary. Here are some useful gradle commands:
   * To run only certain tests, use the option `--tests PATTERN`, where `PATTERN` is a pattern matching the name of the tests that should run. Patterns might include wildcards `*`.
 * Build javadocs: `./gradlew javadoc`, you then find the documentation at `build/docs/javadoc/index.html`
 * Run programs:
-  * Local game: `./gradlew runLocalGame --console=plain --args="<player1> <player2> <player3> <player4>`
+  * Local game: `./gradlew runLocalGame --console=plain --args="<player1> <player2> <player3> <player4>"`
     * Replace `<playerN>` with the name of a player. The special name `"AI"` uses a rather stupid
       AI player. (Students have to implement this player first!)
     * All four client run in the same application
@@ -68,24 +70,24 @@ is necessary. Here are some useful gradle commands:
     * Runs the server on part 17283.
     * Use `./gradlew run --console=plain --args=<port>` to specify a custom port
     * Requires the main class `de.hso.cardgame.gamecentral.server.Main` to be written by students.
-  * Network client: `./gradlew runClient --console=plain --args="<server> <playerName>`
+  * Network client: `./gradlew runClient --console=plain --args="<server> <playerName>"`
     * Runs a client that connects over the network with `<server>`. In the local network, set
       `<server>` to `localhost`.
     * The player name `"AI"` uses a rather stupid AI player.
       (Students have to implement this player first!)
     * Uses by default port 17283.
-    * Use `./gradlew runClient --console=plain --args="<server> <port> <playerName>` to specify
+    * Use `./gradlew runClient --console=plain --args="<server> <port> <playerName>"` to specify
       a custom port.
 
 ## Next steps
 
 If you are a student working on completing this project, I suggest the following steps.
 
-1. Implement the game logic.
+1. Implement the game logic. Tip: Complete the implementation of GameLogic and GameState classes.
    Test with `./gradlew test --tests '*GameLogic*'`
-1. Play by hand using `./gradlew runLocalGame --console=plain --args="Albert Beate Clara Donald`
+1. Play by hand using `./gradlew runLocalGame --console=plain --args="Albert Beate Clara Donald"`
 1. Complete the implementation of the `PlayerStupidAI` class.
-1. Play with AI using `./gradlew runLocalGame --console=plain --args="AI AI AI AI`
+1. Play with AI using `./gradlew runLocalGame --console=plain --args="AI AI AI AI"`
 1. Implement JSON serialization. Test with `./gradlew test--tests '*JSONSerialization*'`
 1. Implement the network logic.
 1. Start the server and four clients. You can either play the clients by hand or you can use the AI player. See above for how to start the programs.
