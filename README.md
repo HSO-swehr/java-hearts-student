@@ -35,6 +35,8 @@ Model and clients communicate via **events** and **commands**.
   use commands to express a wish that something should happen. Examples for commands are:
   some player wants to start the game, some player wants to play some card.
 
+The client should hold as little game logic as possible and only the most necessary information. The server should keep track of the game-state and logic.
+
 ## Setup
 
 You need the following software installed on your computer:
