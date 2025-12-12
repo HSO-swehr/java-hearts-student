@@ -35,6 +35,8 @@ Model and clients communicate via **events** and **commands**.
   use commands to express a wish that something should happen. Examples for commands are:
   some player wants to start the game, some player wants to play some card.
 
+An example would be the desire to play a card. The player sends this command to the server (including the card they want to play). The server checks whether it is a valid move, updates its model, and then sends the domain events to the other players stating that card X was played by player Y.
+
 The client should hold as little game logic as possible and only the most necessary information. The server should keep track of the game-state and logic.
 
 ## Setup
