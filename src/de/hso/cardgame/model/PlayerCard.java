@@ -21,4 +21,8 @@ public record PlayerCard(Player player, Card card) implements JSONSerialization 
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+    
+    public static PlayerCard fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

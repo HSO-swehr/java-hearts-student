@@ -25,4 +25,8 @@ public record Hand(Set<Card> cards) implements JSONSerialization {
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+    
+    public static Hand fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

@@ -13,4 +13,8 @@ public enum Suit implements JSONSerialization {
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+
+    public static Suit fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

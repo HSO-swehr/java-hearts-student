@@ -22,4 +22,8 @@ public record Score(Map<Player, Integer> score) implements JSONSerialization {
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+    
+    public static Score fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

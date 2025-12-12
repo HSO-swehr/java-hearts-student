@@ -59,4 +59,8 @@ public record Card(Suit suit, Rank rank) implements JSONSerialization {
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+    
+    public static Card fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

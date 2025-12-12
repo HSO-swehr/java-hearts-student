@@ -39,4 +39,8 @@ public record Trick(List<PlayerCard> cards) implements JSONSerialization {
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+    
+    public static Trick fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

@@ -17,4 +17,8 @@ public enum Player implements JSONSerialization {
     public JsonElement toJSON() {
         throw new RuntimeException("not implemented");
     }
+    
+    public static Player fromJSON(JsonElement json) {
+        throw new RuntimeException("not implemented");
+    }
 }

@@ -39,6 +39,10 @@ public sealed interface GameEvent extends JSONSerialization
         public JsonElement toJSON() {
             throw new RuntimeException("not implemented");
         }
+        
+        public static PlayerRegistered fromJSON(JsonElement json) {
+            throw new RuntimeException("not implemented");
+        }
     }
 
     /**
@@ -54,6 +58,10 @@ public sealed interface GameEvent extends JSONSerialization
         public JsonElement toJSON() {
             throw new RuntimeException("not implemented");
         }
+        
+        public static HandsDealt fromJSON(JsonElement json) {
+            throw new RuntimeException("not implemented");
+        }
     }
 
     /**
@@ -63,6 +71,10 @@ public sealed interface GameEvent extends JSONSerialization
 
         @Override
         public JsonElement toJSON() {
+            throw new RuntimeException("not implemented");
+        }
+        
+        public static PlayerTurn fromJSON(JsonElement json) {
             throw new RuntimeException("not implemented");
         }
     }
@@ -76,6 +88,10 @@ public sealed interface GameEvent extends JSONSerialization
         public JsonElement toJSON() {
             throw new RuntimeException("not implemented");
         }
+        
+        public static CardPlayed fromJSON(JsonElement json) {
+            throw new RuntimeException("not implemented");
+        }
     }
 
     /**
@@ -85,6 +101,10 @@ public sealed interface GameEvent extends JSONSerialization
 
         @Override
         public JsonElement toJSON() {
+            throw new RuntimeException("not implemented");
+        }
+        
+        public static TrickTaken fromJSON(JsonElement json) {
             throw new RuntimeException("not implemented");
         }
     }
@@ -98,6 +118,10 @@ public sealed interface GameEvent extends JSONSerialization
         public JsonElement toJSON() {
             throw new RuntimeException("not implemented");
         }
+        
+        public static GameError fromJSON(JsonElement json) {
+            throw new RuntimeException("not implemented");
+        }
     }
 
     /**
@@ -109,6 +133,10 @@ public sealed interface GameEvent extends JSONSerialization
         public JsonElement toJSON() {
             throw new RuntimeException("not implemented");
         }
+        
+        public static PlayerError fromJSON(JsonElement json) {
+            throw new RuntimeException("not implemented");
+        }
     }
 
     /**
@@ -118,6 +146,10 @@ public sealed interface GameEvent extends JSONSerialization
 
         @Override
         public JsonElement toJSON() {
+            throw new RuntimeException("not implemented");
+        }
+        
+        public static GameOver fromJSON(JsonElement json) {
             throw new RuntimeException("not implemented");
         }
     }

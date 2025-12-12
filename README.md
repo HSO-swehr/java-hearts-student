@@ -88,10 +88,10 @@ is necessary. Here are some useful gradle commands:
 If you are a student working on completing this project, I suggest the following steps.
 
 1. Implement the game logic. Tip: Complete the implementation of GameLogic and GameState classes.
-   Test with `./gradlew test --tests '*GameLogic*'`
+   Test with `./gradlew test --tests *GameLogic*`
 1. Play by hand using `./gradlew runLocalGame --console=plain --args="Albert Beate Clara Donald"`
 1. Complete the implementation of the `PlayerStupidAI` class.
 1. Play with AI using `./gradlew runLocalGame --console=plain --args="AI AI AI AI"`
-1. Implement JSON serialization. Test with `./gradlew test--tests '*JSONSerialization*'`
+1. Implement JSON serialization. Test with `./gradlew test--tests *JSONSerialization*`
 1. Implement the network logic.
 1. Start the server and four clients. You can either play the clients by hand or you can use the AI player. See above for how to start the programs.
