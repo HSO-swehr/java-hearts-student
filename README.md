@@ -73,7 +73,7 @@ is necessary. Here are some useful gradle commands:
   * Server: `./gradlew run --console=plain`
     * Runs the server on part 17283.
     * Use `./gradlew run --console=plain --args=<port>` to specify a custom port
-    * Requires the main class `de.hso.cardgame.gamecentral.server.Main` to be written by students.
+    * Requires the main class `de.hso.cardgame.gamecentral.server.Server` to be written by students in newly created file.
   * Network client: `./gradlew runClient --console=plain --args="<server> <playerName>"`
     * Runs a client that connects over the network with `<server>`. In the local network, set
       `<server>` to `localhost`.
@@ -82,6 +82,7 @@ is necessary. Here are some useful gradle commands:
     * Uses by default port 17283.
     * Use `./gradlew runClient --console=plain --args="<server> <port> <playerName>"` to specify
       a custom port.
+    * Requires the main class `de.hso.cardgame.clients.NetClient` to be written by students in newly created file.
 
 ## Next steps
 
@@ -95,3 +96,12 @@ If you are a student working on completing this project, I suggest the following
 1. Implement JSON serialization. Test with `./gradlew test --tests *JSONSerialization*`
 1. Implement the network logic.
 1. Start the server and four clients. You can either play the clients by hand or you can use the AI player. See above for how to start the programs.
+
+## Tips for network logic implementation
+
+If you are struggling to get started with the netwrok logic consider the following tips:
+
+1. Playing via network requires 1 console to run the server and four consoles to run the clients (players) using the corresponding gradlew commands
+1. The gradlew command runLocalClient, which has been used up to this point, used to start the main() of FullGame. This function will not be started when playing via network. So, the logic contained in FullGame needs to be transferred to Server and NetClient.
+1. The server should hold most of the logic, including GameLogic itself. To create a GameLogic object the constructor needs an object implementing EvenConsumer. This may be Server itself, using "this" in the GameLogic constructor.
+1. The NetClient needs to know whether it is supposed to be a human or AI player and implement some of the PlayerBehavior logic from FullGame (think about what happens when a GameEvent arrives)
