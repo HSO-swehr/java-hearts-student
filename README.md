@@ -105,3 +105,6 @@ If you are struggling to get started with the netwrok logic consider the followi
 1. The gradlew command runLocalClient, which has been used up to this point, used to start the main() of FullGame. This function will not be started when playing via network. So, the logic contained in FullGame needs to be transferred to Server and NetClient.
 1. The server should hold most of the logic, including GameLogic itself. To create a GameLogic object the constructor needs an object implementing EvenConsumer. This may be Server itself, using "this" in the GameLogic constructor.
 1. The NetClient needs to know whether it is supposed to be a human or AI player and implement some of the PlayerBehavior logic from FullGame (think about what happens when a GameEvent arrives)
+1. Server waits for four NetClients to connect, then starts a Thread for each one to listen to incoming messages.
+1. Server sends GameEvents and recieves GameCommands, NetClient works the other way around. Send GameEvents and GameCommands via sockets using JSON data format.
+1. Some things might need to be synchronized between Threads.
